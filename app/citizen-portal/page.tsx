@@ -1,3 +1,7 @@
+// src/app/citizen-portal/page.tsx
+'use client'; // This ensures it's a client component, necessary for useRouter
+
+import { useRouter } from 'next/navigation'; // Import useRouter
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,6 +28,8 @@ import {
 } from "lucide-react"
 
 export default function CitizenPortalPage() {
+  const router = useRouter(); // Initialize useRouter
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50">
       {/* Header */}
@@ -99,6 +105,7 @@ export default function CitizenPortalPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {/* Birth Certificate Card - MODIFIED */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-blue-500" />
@@ -110,10 +117,13 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Apply for or request a copy of your birth certificate</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">5-7 days</Badge>
-                      <Button size="sm">Apply Now</Button>
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/birth-certificate-application')}> {/* ADDED onClick */}
+                        Apply Now
+                      </Button>
                     </div>
                   </div>
 
+                  {/* Business License Card - MODIFIED */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-green-500" />
@@ -125,7 +135,9 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Register your business and obtain necessary licenses</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">10-14 days</Badge>
-                      <Button size="sm">Apply Now</Button>
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/business-license-application')}> {/* ADDED onClick */}
+                        Apply Now
+                      </Button>
                     </div>
                   </div>
 
@@ -640,6 +652,11 @@ export default function CitizenPortalPage() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
+                    My Applications
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
                     Public Information
                   </a>
                 </li>
@@ -650,50 +667,52 @@ export default function CitizenPortalPage() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
-                    Help Center
+                    FAQs
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-medium mb-4">Ministries</h3>
+              <h3 className="font-medium mb-4">Contact Info</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Ministry of Finance
-                  </a>
+                <li className="flex items-center space-x-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Addis Ababa, Ethiopia</span>
                 </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Ministry of Health
-                  </a>
+                <li className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4" />
+                  <span>+251-11-XXX-XXXX</span>
                 </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Ministry of Education
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    All Ministries
-                  </a>
+                <li className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4" />
+                  <span>info@gov.et</span>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-medium mb-4">Support</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Hotline: +251-11-XXX-XXXX</li>
-                <li>Email: support@gov.et</li>
-                <li>Hours: 24/7</li>
-              </ul>
+              <h3 className="font-medium mb-4">Follow Us</h3>
+              <div className="flex space-x-4">
+                {/* Placeholder for social media icons */}
+                <a href="#" className="text-gray-400 hover:text-white">
+                  {/* <Facebook className="h-6 w-6" /> */}
+                  FB
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  {/* <Twitter className="h-6 w-6" /> */}
+                  TW
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  {/* <Linkedin className="h-6 w-6" /> */}
+                  LN
+                </a>
+              </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2025 Federal Democratic Republic of Ethiopia. All rights reserved.</p>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} Ethiopian Government Portal. All rights reserved.
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
