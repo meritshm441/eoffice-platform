@@ -105,7 +105,7 @@ export default function CitizenPortalPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {/* Birth Certificate Card - MODIFIED */}
+                  {/* Birth Certificate Card */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-blue-500" />
@@ -117,13 +117,13 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Apply for or request a copy of your birth certificate</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">5-7 days</Badge>
-                      <Button size="sm" onClick={() => router.push('/citizen-portal/birth-certificate-application')}> {/* ADDED onClick */}
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/birth-certificate-application')}>
                         Apply Now
                       </Button>
                     </div>
                   </div>
 
-                  {/* Business License Card - MODIFIED */}
+                  {/* Business License Card */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-green-500" />
@@ -135,12 +135,13 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Register your business and obtain necessary licenses</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">10-14 days</Badge>
-                      <Button size="sm" onClick={() => router.push('/citizen-portal/business-license-application')}> {/* ADDED onClick */}
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/business-license-application')}>
                         Apply Now
                       </Button>
                     </div>
                   </div>
 
+                  {/* Passport Application Card */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-purple-500" />
@@ -152,10 +153,13 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Apply for new passport or renew existing one</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">15-21 days</Badge>
-                      <Button size="sm">Apply Now</Button>
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/passport-application')}>
+                        Apply Now
+                      </Button>
                     </div>
                   </div>
 
+                  {/* Tax Registration Card */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-orange-500" />
@@ -167,10 +171,13 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Register for tax identification number (TIN)</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">3-5 days</Badge>
-                      <Button size="sm">Apply Now</Button>
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/tax-registration-application')}>
+                        Apply Now
+                      </Button>
                     </div>
                   </div>
 
+                  {/* Land Certificate Card */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-red-500" />
@@ -182,10 +189,13 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Apply for land ownership certificate</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">20-30 days</Badge>
-                      <Button size="sm">Apply Now</Button>
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/land-certificate-application')}>
+                        Apply Now
+                      </Button>
                     </div>
                   </div>
 
+                  {/* Health Insurance Card */}
                   <div className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
                     <div className="flex items-center space-x-3 mb-3">
                       <FileText className="h-8 w-8 text-teal-500" />
@@ -197,7 +207,9 @@ export default function CitizenPortalPage() {
                     <p className="text-sm text-gray-600 mb-3">Register for national health insurance program</p>
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">7-10 days</Badge>
-                      <Button size="sm">Apply Now</Button>
+                      <Button size="sm" onClick={() => router.push('/citizen-portal/health-insurance-application')}>
+                        Apply Now
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -715,4 +727,4 @@ export default function CitizenPortalPage() {
       </footer>
     </div>
   );
-}
+} 
