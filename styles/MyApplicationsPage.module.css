@@ -1,0 +1,325 @@
+/* src/styles/MyApplicationsPage.module.css */
+
+.container {
+  min-height: 100vh;
+  background-color: #f0f4f7; /* Light grey-blue background */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to bottom right, #069732, #a6f083);/* Green header from your portal */
+  color: #ffffff;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.headerTitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.backButton {
+  padding: 10px 20px;
+  background-color: #1e7e34; /* Darker green */
+  color: #fff;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.backButton:hover {
+  background-color: #155724;
+  transform: translateY(-1px);
+}
+
+/* Main Content Area */
+.mainContent {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to top */
+}
+
+.applicationsSection {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px; /* Wider for application list */
+  border: 1px solid #e0e0e0;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.sectionDescription {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.noApplications {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  border: 1px dashed #ced4da;
+  border-radius: 8px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.applyNowButton {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.applyNowButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.applicationList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.applicationCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.applicationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.applicationIconStatus {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.applicationIconStatus svg {
+  width: 35px;
+  height: 35px;
+  min-width: 35px; /* Ensure icon doesn't shrink */
+}
+
+.iconApproved { color: #28a745; }
+.iconUnderReview { color: #ffc107; }
+.iconInfoRequired { color: #dc3545; }
+.iconRejected { color: #6c757d; } /* Grey for rejected */
+.iconDefault { color: #007bff; }
+
+.applicationTitles {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceType {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.applicationId {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.statusSection {
+  text-align: right;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.badgeApproved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badgeUnderReview {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badgeInfoRequired {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.badgeRejected {
+  background-color: #e2e3e5; /* Light grey for rejected */
+  color: #495057;
+}
+
+.badgeDefault {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.submittedDate {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.applicationActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.actionButton {
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #ced4da;
+  background-color: #f0f4f7;
+  color: #333;
+}
+
+.actionButton:hover {
+  background-color: #e2e6ea;
+  transform: translateY(-1px);
+}
+
+.actionIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.downloadButton {
+  background-color: #28a745; /* Green */
+  color: #fff;
+  border-color: #28a745;
+}
+
+.downloadButton:hover {
+  background-color: #218838;
+}
+
+.provideInfoButton {
+  background-color: #007bff; /* Blue */
+  color: #fff;
+  border-color: #007bff;
+}
+
+.provideInfoButton:hover {
+  background-color: #0056b3;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #343a40; /* Dark footer */
+  color: #e9ecef;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  border-top: 1px solid #495057;
+  margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .headerTitle {
+    font-size: 24px;
+  }
+  .backButton {
+    width: 100%;
+    text-align: center;
+  }
+  .mainContent {
+    padding: 20px;
+  }
+  .applicationsSection {
+    padding: 25px;
+  }
+  .sectionTitle {
+    font-size: 26px;
+  }
+  .sectionDescription {
+    font-size: 15px;
+  }
+  .applicationHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .statusSection {
+    text-align: left;
+    width: 100%;
+  }
+  .applicationActions {
+    justify-content: flex-start; /* Align buttons to the left on small screens */
+    width: 100%;
+  }
+  .actionButton {
+    flex-grow: 1; /* Make buttons fill available width */
+    justify-content: center;
+  }
+}
